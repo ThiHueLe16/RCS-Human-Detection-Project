@@ -81,9 +81,11 @@ This project is a collection of algorithms and techniques for video, frame(image
 - Motion not detected by YOLO is marked with a green bounding box, while YOLO objects remain in red.
 - Output using Algo utilize YOLOv8 
   - (slow because i use cpu to run, with better cpu, or use gpu -> process time/frame can up to 18ms)
+  
   <a href="">
       <img src="./TestOutput/TestOutputOfObjDetection/peopleYOLOGray-ezgif.com-crop.gif" alt="Watch the video" width="600"/>
   </a>
+
 ### Movement Detection with Optical Flow
 - Enhances YOLO detection by identifying motion that YOLO cannot detect (e.g., unknown objects or subtle movements).  
 - Combines optical flow with YOLO to avoid redundant detections:  
