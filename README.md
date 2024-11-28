@@ -67,11 +67,12 @@ This project is a collection of algorithms and techniques for video, frame(image
 <a href="">
     <img src="./TestOutput/TestOutputOfObjDetection/peopleTestYolo-ezgif.com-optimize.gif" alt="Watch the video" width="600"/>
 </a>
+
 -  Output using Algo utilize YOLOv8 
   - (slow because i use cpu to run, with better cpu, or use gpu -> process time/frame can up to 18ms)
-  <a href="">
-      <img src="./TestOutput/TestOutputOfObjDetection/IMG_9983-ezgif.com-optimize.gif" alt="Watch the video" width="600"/>
-  </a>
+    <a href="">
+        <img src="./TestOutput/TestOutputOfObjDetection/IMG_9983-ezgif.com-optimize.gif" alt="Watch the video" width="600"/>
+    </a>
 
 ## Movement Detection:
 ### Movement Detection with Background subtraction(current in ./testYolo/main)
@@ -146,10 +147,10 @@ Test cases for:
    - Use a dataset with predefined sharpness/blurriness labels.
    - Evaluate detection reliability using precision and recall metrics.
    
-5**Shadow Mitigation in Optical Flow**:  
+5. **Shadow Mitigation in Optical Flow**:  
    - Apply shadow detection/removal algorithms to improve motion detection reliability.
 
-6**Custom Training for YOLO**:  
+6. **Custom Training for YOLO**:  
    - Extend YOLO capabilities to include additional object classes beyond its pre-trained specifications.
 
 ---
