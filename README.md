@@ -98,12 +98,14 @@ This project is a collection of algorithms and techniques for video, frame(image
 <a href="">
       <img src="./TestOutput/TestOutputOfObjDetection/pureOpFlowPeple2.0.gif" alt="Watch the video" width="600"/>
 </a>
+
 - Result Test combining both Yolo and  Optical Flow(magnitude:3.0) to detect 
   - (slow because i use cpu to run, with better cpu, or use gpu -> process time/frame can up to 18ms)
   - only yolo can not detect the ball, which was played by 2 people
 <a href="">
       <img src="./TestOutput/TestOutputOfObjDetection/YoloOpticalFlow2.0.gif" alt="Watch the video" width="600"/>
 </a>
+  
 ---
 
 ## Known Limitations and Future Improvements
