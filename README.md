@@ -51,9 +51,9 @@ This project is a collection of algorithms and techniques for video, frame(image
 - **Brightness Check:** Compares image pixel intensity to predefined thresholds.  
 - **Blurriness Detection:** Analyzes the image's edge sharpness using variance in pixel gradients.  
 - **Sharpness Check:** Provides a confidence score for clarity, check if image is sharpness or blury
-- - Laplacian Operator: The method uses the Laplacian edge detection technique to highlight areas of high contrast in the image, which helps determine sharpness.
-- - Variance Calculation: The variance of the Laplacian result is calculated to evaluate the overall sharpness of the image.
-- - Blurriness Check: If the variance is below a threshold (default: 100), the image is classified as blurry; if it exceeds the threshold, the image is considered sharp.
+  - Laplacian Operator: The method uses the Laplacian edge detection technique to highlight areas of high contrast in the image, which helps determine sharpness.
+  - Variance Calculation: The variance of the Laplacian result is calculated to evaluate the overall sharpness of the image.
+  - Blurriness Check: If the variance is below a threshold (default: 100), the image is classified as blurry; if it exceeds the threshold, the image is considered sharp.
 
 ### Restricted Area Object Detection
 - Relies on background subtraction and color segmentation.  
@@ -68,10 +68,11 @@ This project is a collection of algorithms and techniques for video, frame(image
     <img src="./TestOutput/TestOutputOfObjDetection/peopleTestYolo-ezgif.com-optimize.gif" alt="Watch the video" width="600"/>
 </a>
 - Output using Algo utilize YOLOv8 
-- - (slow because i use cpu to run, with better cpu, or use gpu -> process time/frame can up to 18ms)
-<a href="">
-    <img src="./TestOutput/TestOutputOfObjDetection/IMG_9983-ezgif.com-optimize.gif" alt="Watch the video" width="600"/>
-</a>
+  - (slow because i use cpu to run, with better cpu, or use gpu -> process time/frame can up to 18ms)
+  <a href="">
+      <img src="./TestOutput/TestOutputOfObjDetection/IMG_9983-ezgif.com-optimize.gif" alt="Watch the video" width="600"/>
+  </a>
+
 ## Movement Detection:
 ### Movement Detection with Background subtraction(current in ./testYolo/main)
 - YOLOv8 detects objects and draws bounding boxes for recognized objects.
@@ -79,10 +80,10 @@ This project is a collection of algorithms and techniques for video, frame(image
 - Motion is checked for overlap with YOLO bounding boxes.
 - Motion not detected by YOLO is marked with a green bounding box, while YOLO objects remain in red.
 - Output using Algo utilize YOLOv8 
-- - (slow because i use cpu to run, with better cpu, or use gpu -> process time/frame can up to 18ms)
-<a href="">
-    <img src="./TestOutput/TestOutputOfObjDetection/peopleYOLOGray-ezgif.com-crop.gif" alt="Watch the video" width="600"/>
-</a>
+  - (slow because i use cpu to run, with better cpu, or use gpu -> process time/frame can up to 18ms)
+  <a href="">
+      <img src="./TestOutput/TestOutputOfObjDetection/peopleYOLOGray-ezgif.com-crop.gif" alt="Watch the video" width="600"/>
+  </a>
 ### Movement Detection with Optical Flow
 - Enhances YOLO detection by identifying motion that YOLO cannot detect (e.g., unknown objects or subtle movements).  
 - Combines optical flow with YOLO to avoid redundant detections:  
@@ -101,7 +102,6 @@ This project is a collection of algorithms and techniques for video, frame(image
   - (slow because i use cpu to run, with better cpu, or use gpu -> process time/frame can up to 18ms)
   - only yolo can not detect the ball, which was played by 2 people
 <a href="">
-  
       <img src="./TestOutput/TestOutputOfObjDetection/YoloOpticalFlow2.0.gif" alt="Watch the video" width="600"/>
 </a>
 ---
