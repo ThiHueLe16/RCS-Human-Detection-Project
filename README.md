@@ -67,7 +67,7 @@ This project is a collection of algorithms and techniques for video, frame(image
 <a href="">
     <img src="./TestOutput/TestOutputOfObjDetection/peopleTestYolo-ezgif.com-optimize.gif" alt="Watch the video" width="600"/>
 </a>
-- Output using Algo utilize YOLOv8 
+-  Output using Algo utilize YOLOv8 
   - (slow because i use cpu to run, with better cpu, or use gpu -> process time/frame can up to 18ms)
   <a href="">
       <img src="./TestOutput/TestOutputOfObjDetection/IMG_9983-ezgif.com-optimize.gif" alt="Watch the video" width="600"/>
