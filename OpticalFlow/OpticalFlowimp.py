@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-
+# this module is too test the motion detection using only Optical Flow
 def detect_motion_with_optical_flow(frame1, frame2):
     """
     Detects motion between two grayscale frames using optical flow.
@@ -15,10 +15,16 @@ def detect_motion_with_optical_flow(frame1, frame2):
     # Threshold motion magnitude to create a motion mask
 
     motion_mask = (magnitude > 2.0).astype(np.uint8) * 255  # Adjust threshold if needed, higher threshold to reduce sensitive to really small, insignificant cauuse by shadow or lighting
+    # NEWWWWWWW============== TO REDUCE sensitive insignificant changes
+    # Apply morphological operations to refine the mask
+    kernel = np.ones((3, 3), np.uint8)  # Define a 3x3 kernel
+    motion_mask = cv2.erode(motion_mask, kernel, iterations=1)  # Erode small noise
+    motion_mask = cv2.dilate(motion_mask, kernel, iterations=2)  # Dilate to merge regions
+    # ======================
     return motion_mask
 
 # Initialize video capture
-video_path = "../testYolo/peopleTestYolo.mp4"
+video_path = "../testYolo/PeoplePlayChessRobot.mov"
 cap = cv2.VideoCapture(video_path)
 
 # Check if the video opened successfully

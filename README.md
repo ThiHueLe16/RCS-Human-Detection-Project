@@ -64,6 +64,7 @@ This project is a collection of algorithms and techniques for video, frame(image
 - Functions optimally within the specified classes in YOLO’s training data.
 #### Video Example:
 - Original
+
 <a href="">
     <img src="./TestOutput/TestOutputOfObjDetection/peopleTestYolo-ezgif.com-optimize.gif" alt="Watch the video" width="600"/>
 </a>
@@ -75,7 +76,7 @@ This project is a collection of algorithms and techniques for video, frame(image
     </a>
 
 ## Movement Detection:
-### Movement Detection with Background subtraction(current in ./testYolo/main)
+### Movement Detection with Optical Flow/Background subtraction(current in ./testYolo/main)
 - YOLOv8 detects objects and draws bounding boxes for recognized objects.
 - Background subtraction detects any motion.
 - Motion is checked for overlap with YOLO bounding boxes.
@@ -87,19 +88,36 @@ This project is a collection of algorithms and techniques for video, frame(image
       <img src="./TestOutput/TestOutputOfObjDetection/peopleYOLOGray-ezgif.com-crop.gif" alt="Watch the video" width="600"/>
   </a>
 
+
+### Movement Detection with Background Subtraction
+<a href="">
+      <img src="./TestOutput/TestOutputOfObjDetection/ScreenRecording2025-02-03at01.22.10-ezgif.com-crop%20(1).gif" width="600"/>
+</a>
+
+
 ### Movement Detection with Optical Flow
 - Enhances YOLO detection by identifying motion that YOLO cannot detect (e.g., unknown objects or subtle movements).  
 - Combines optical flow with YOLO to avoid redundant detections:  
   - Motion overlapping with YOLO-detected objects(green bounding box) is ignored.  
   - Unique movements are highlighted with red bounding boxes.
   - the higher magnitude threshold parameter we set, the more algo. will ignore the smaller motion mevement.
-- Output Test using Algo of ONLY Optical Flow to detect motion- magnitude=2.0(threadhold used to create motion mask)
-  - (slow because i use cpu to run, with better cpu, or use gpu -> process time/frame can up to 18ms)
+  - Output Test using Algo of ONLY Optical Flow to detect motion- magnitude=1.0(threadhold used to create motion mask)
+    - in OpticalFlow/OpticalFlowImp.py  
+    - (slow because i use cpu to run, with better cpu, or use gpu -> process time/frame can up to 18ms)
+    - Note: Slow magnitude made optical Flow really sensitive to small movement and light condition and shadow....
+  
 <a href="">
       <img src="./TestOutput/TestOutputOfObjDetection/pureOpticalFlow.gif" alt="Watch the video" width="600"/>
 </a>
+
 <a href="">
       <img src="./TestOutput/TestOutputOfObjDetection/pureOpFlowPeple2.0.gif" alt="Watch the video" width="600"/>
+</a>
+
+  - Optical Flow with magnitude=2.0, higher magnitude-> less sensitive to small change
+
+<a href="">
+      <img src="./TestOutput/TestOutputOfObjDetection/PureOpticalFlow2.0.gif" alt="Watch the video" width="600"/>
 </a>
 
 - Result Test combining both Yolo and  Optical Flow(magnitude:3.0) to detect 

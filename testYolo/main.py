@@ -20,7 +20,7 @@ names = {0: 'person', 1: 'bicycle', 2: 'car', 3: 'motorcycle', 4: 'airplane', 5:
          76: 'scissors', 77: 'teddy bear', 78: 'hair drier', 79: 'toothbrush'}
 
 # Initialize video capture and YOLO model
-cap=cv2.VideoCapture("peopleTestYolo.mp4")
+cap=cv2.VideoCapture("./peopleTestYolo.mp4")
 model=YOLO("yolov8m.pt")
 
 # Initialize background subtractor
@@ -31,7 +31,9 @@ while True:
     if not ret:
         break
     # YOLOv8 object detection
-    results= model(frame)
+    # results= model(frame)
+    # Run YOLOv8 detection with a custom IoU threshold
+    results = model(frame, iou=0.5)  # Change IoU to 50%
     result=results[0]
     boundingboxes= np.array(result.boxes.xyxy.cpu(),dtype="int")
     classes= np.array(result.boxes.cls.cpu(),dtype="int")
